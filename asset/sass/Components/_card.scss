@@ -1,0 +1,96 @@
+.cardPhone {
+    box-shadow: 6px 6px 12px $color-white-2, -6px -6px 12px $color-white-3;
+    background-color: $color-white-1;
+    border: none;
+    padding: $pd-3 + 5;
+    margin-bottom: $mg-2;
+    border-radius: $bd-2;
+    position: relative;
+    overflow: hidden;
+
+    img {
+        box-shadow: 6px 6px 12px $color-white-2, -6px -6px 12px $color-white-3;
+        border-radius: $bd-2;
+    }
+
+    .cardPhone__title {
+        @include styleText($fs-7, $fw-3, $color-blue-1);
+    }
+
+    .cardPhone__type {
+        @include styleButton($color-white-2, $pd-1, $pd-1, none, $bd-2, $ls-2 );
+        @include styleText($fs-2, $fw-2, $color-blue-1);
+        text-align: center;
+        width: 30%;
+    }
+
+    .cardPhone__text {
+        @include styleText($fs-1, $fw-1, $color-blue-1);
+    }
+
+    .cardPhone__rating {
+        color: $color-yellow-1;
+    }
+
+    &:hover .cardPhone__overlay {
+        opacity: 1;
+
+    }
+
+    &:hover .cardPhone__info {
+        top: 0;
+    }
+
+    &:hover .btnPhone-shadow {
+        bottom: 5%;
+    }
+
+    .cardPhone__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $color-layer;
+        opacity: 0;
+        transition: all .3s;
+        border-radius: $bd-2;
+    }
+
+    .cardPhone__info {
+        padding: $pd-9 $pd-2;
+        display: block;
+        position: absolute;
+        top: -100%;
+        transition: all .5s;
+        width: 100%;
+        line-height: 1.6;
+
+        h3 {
+            text-align: center;
+            margin-bottom: $mg-2 + 10;
+            @include styleText($fs-7 + 10, $fw-3, $color-white-3)
+        }
+
+        .cardPhone__info--text {
+            display: block;
+            margin-bottom: $mg-2;
+        }
+
+        h4 {
+            display: inline;
+            margin: 0;
+            margin-left: $mg-2;
+            margin-right: $mg-5;
+            @include styleText($fs-7, $fw-2, $color-white-3);
+        }
+
+        p,
+        a {
+            display: inline;
+
+            @include styleText($fs-7 - 2, $fw-1, $color-white-4);
+        }
+    }
+
+}
