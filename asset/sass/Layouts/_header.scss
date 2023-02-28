@@ -55,6 +55,16 @@ header {
                 font-size: $fs-3;
             }
         }
+
+        .active {
+            .nav-link {
+                @include styleText($fs-2, $fw-2, $color-blue-2);
+
+                &::after {
+                    transform: scaleX(1);
+                }
+            }
+        }
     }
 }
 

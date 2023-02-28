@@ -21,7 +21,7 @@
         @include styleButton($color-white-2, $pd-1, $pd-1, none, $bd-2, $ls-2 );
         @include styleText($fs-2, $fw-2, $color-blue-1);
         text-align: center;
-        width: 30%;
+        width: 50%;
     }
 
     .cardPhone__text {
