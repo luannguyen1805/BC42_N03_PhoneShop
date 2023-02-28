@@ -1,6 +1,7 @@
 //Helpers
 @import "./Helpers/variables";
 @import "./Helpers/mixin";
+@import "./Helpers/function";
 //Vendors
 
 //Base
@@ -9,11 +10,13 @@
 //Components
 @import "./Components/buttons";
 @import "./Components/card";
+@import "./Components/dropdown";
 
 //Layouts
 @import "./Layouts/header";
 @import "./Layouts/carousel";
 @import "./Layouts/products";
+@import "./Layouts/cart";
 @import "./Layouts/footer";
 
 //Pages

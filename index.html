@@ -47,9 +47,17 @@
                             Admin Portal</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="navIcon fa fa-shopping-cart"></i>
-                            Cart
+                        <a class="nav-link js-toggle-cart active" role="button" aria-haspopup="true"
+                            aria-expanded="false">
+                            <div>
+                                <i class="navIcon fa fa-shopping-cart"></i>
+                                Cart
+                                <span class="badge rounded-pill badge-notification bg-light text-dark"
+                                    id="cartCount">0</span>
+
+                            </div>
+                            <!-- <span class="b-icon"><i class="navIcon fa fa-shopping-cart"></i>Cart</span>
+                            <span class="bag-count">3</span> -->
                         </a>
                     </li>
                 </ul>
@@ -81,59 +89,102 @@
 
     <section class="products container section" id="featured-products">
         <h2 class="section-title">-Featured Products-</h2>
+        <div class="form-group">
+            <label for="">Loại sản phẩm</label>
+            <select name="" class="form-control" id="selectList">
+                <option value="">All Phone</option>
+                <option value="Iphone">Iphone</option>
+                <option value="Samsung">Samsung</option>
+            </select>
+        </div>
         <div class="product__content">
-            <div class="row">
+            <div class="row" id="content">
                 <!-- Render product (call API)  -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card cardPhone">
-                        <img src="./asset/img/product1.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between">
-                                <div>
-                                    <div>
-                                        <h3 class="cardPhone__title">CyberBeats</h3>
-                                        <h3 class="cardPhone__title">$99.99</h3>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="meh">
+        <div class="cart is-hidden">
+            <div class="cart__overlay"></div>
+            <div class="cart__contents">
+                <div class="cart__products">
+                    <h2>Shopping Cart</h2>
+                    <p class="microcopy">An overview of your selected products.</p>
+                    <div class="products" id="cartList">
+                        <!-- <div class="product">
+                            <div class="product__1">
+                                <div class="product__thumbnail">
+                                    <img src="https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s23-5g-r.jpg"
+                                        alt="Italian Trulli">
+                                </div>
+                                <div class="product__details">
+                                    <div style="margin-bottom: 8px;"><b>Samsung Galaxy S22</b></div>
+                                    <div style="font-size: 90%;">Screen: <span class="tertiary">6.1” Dynamic AMOLED 2X
+                                            Infinity-O</span></div>
+                                    <div style="font-size: 90%;">Back Camera: <span class="tertiary">50 MP x 10MP x 12
+                                            MP</span></div>
+                                    <div style="font-size: 90%;">Front Camera: <span class="tertiary">12 MP</span></div>
+                                    <div style="margin-top: 8px;"><a href="#!" onclick="btnRemove('12')">Remove</a>
                                     </div>
-                                    <h2 class="cardPhone__type">Iphone</h2>
-                                    <p class="cardPhone__text">Thiết kế mang tính đột phá Thiết kế mang tính đột phá
-                                        Thiết kế mang tính đột phá</p>
                                 </div>
                             </div>
-                            <div class="d-flex justify-content-around">
-                                <div class="cardPhone__rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
+                            <div class="product__2">
+                                <div class="qty">
+                                    <span><b>Quantity:</b> </span> &nbsp; &nbsp;
+                                    <span class="minus bg-dark" onclick="btnMinus('12')">-</span>
+                                    <span class="quantityResult mx-2">1</span>
+                                    <span class="plus bg-dark" onclick="btnAdd('12')">+</span>
                                 </div>
+                                <div class="product__price"><b>$700</b></div>
                             </div>
-                            <span class="cardPhone__overlay">
-                                <span class="cardPhone__info">
-                                    <h3>- Specifications -</h3>
-                                    <span class="cardPhone__info--text">
-                                        <h4>Screen: </h4>
-                                        <p>screen 68</p>
-                                    </span>
-                                    <span class="cardPhone__info--text">
-                                        <h4>BackCamera: </h4>
-                                        <p>Camera chính 48 MP & Phụ 12 MP, 12 MP</p>
-                                    </span>
-                                    <span class="cardPhone__info--text">
-                                        <h4>FrontCamera: </h4>
-                                        <p>Camera TrueDepth 12 MP</p>
-                                    </span>
-                                </span>
-                                <span>
-                                    <button class="btnPhone-shadow"><i class="fa fa-shopping-cart"></i> Buy Now</button>
-                                </span>
-                            </span>
-                        </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="cart__totals">
+                    <table class="totals">
+                        <tbody>
+                            <tr>
+                                <th class="align-left font-normal tertiary">Subtotal</th>
+                                <td class="align-right" id="subTotal"></td>
+                            </tr>
+                            <tr>
+                                <th class="align-left font-normal tertiary">
+                                    Shipping <small>(estimated)</small>
+                                </th>
+                                <td class="align-right" id="shipping"></td>
+                            </tr>
+                            <tr>
+                                <th class="align-left font-normal tertiary">
+                                    Tax <small>(estimated)</small>
+                                </th>
+                                <td class="align-right" id="tax"></td>
+                            </tr>
+                            <tr>
+                                <th class="align-left">Total</th>
+                                <td class="align-right" id="priceTotal"></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2" class="tertiary">
+                                    <small>Estimations based on New York, United States</small>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <div class="form__footer">
+                        <button class="btn first js-toggle-cart">Continue Shopping</button>
+                        <button class="btn yellow-btn" onclick="payNow()">Pay Now</button>
+                        <button class="btn me-5 ms-0 px-4 red-btn" onclick="emptyCart()" id="emptyCart">
+                            <i class="fa fa-trash"></i> Empty Cart
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <footer class="footerPhone">
         <img class="img-fluid footer__light" src="./asset/img/angle-up-light.svg" alt="">
@@ -163,17 +214,37 @@
         </div>
     </footer>
 
-
-
-
     <!-- Thư viện hỗ trợ jquery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
+        integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- BS4 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"
+        integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- thư viện AXIOS API -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+        // toggle shopping cart
+        $('.js-toggle-cart, .cart__overlay').on('click', function () {
+            $('.cart').toggleClass('is-hidden');
+        });
+        // change nav bar color when scroll
+        $(window).on('scroll', function () {
+            if (this.scrollY > 100) {
+                $('nav').addClass('black');
+            } else {
+                $('nav').removeClass('black');
+            }
+        });
+    </script>
+    <!-- MAIN JS -->
+    <script type="module" src="./customer/controller/main.js"></script>
+
+
+
 </body>
 
 </html>

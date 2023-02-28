@@ -32,8 +32,8 @@
 
     &:hover {
 
-        @include styleButton($color-white-1, $pd-1, $pd-3 - 5, none, $bd-1 + 2, $ls-2 );
-        @include styleText($fs-7 + 3, $fw-2, $color-blue-2 );
-        box-shadow: 2px 2px 4px $color-white-2, -2px -2px 4px $color-white-3;
+        @include styleButton($color-yellow-1, $pd-1, $pd-3 - 5, none, $bd-1 + 2, $ls-2 );
+        @include styleText($fs-7 + 3, $fw-2, $color-blue-1 );
+        // box-shadow: 2px 2px 4px $color-yellow-1, -2px -2px 4px $color-yellow-1;
     }
 }
