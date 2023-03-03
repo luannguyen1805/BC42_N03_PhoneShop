@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Trang quản trị </title>
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="/asset/css/main.css"> -->
+    <link rel="stylesheet" href="/asset/css/main.css">
+    
+  </head>
+
+  <body>
+    <div class="">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-danger ">
+        <a class="navbar-brand" href="#">
+          <i class="fa-solid fa-robot"></i> PhoneShop</a>
+        <button
+          class="navbar-toggler d-lg-none"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapsibleNavId"
+          aria-controls="collapsibleNavId"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        ></button>
+        <div class="collapse navbar-collapse " id="collapsibleNavId">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link " href="../index.html"
+                > <i class="navIcon fa fa-home"></i> HOME <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/index.html"><i class="navIcon fa fa-shopping-cart"></i> STORE</a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+
+   <div class="display-4 my-4 text-center " >DANH SÁCH SẢN PHẨM</div>
+      
+      <br />
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <!--Danh sách sản phẩm -->
+        <div role="tabpanel" class="tab-pane in active" id="DanhSachSP">
+          <div class="row">
+            <div class="col-md-8">
+              <!-- BEGIN BUTTOM THÊM MỚI -->
+              <button
+                id="btnThemSP"
+                class="btn btn-danger"
+                data-toggle="modal"
+                data-target="#myModal"
+              >
+                <i class="fa fa-plus mr-1"></i>
+                Thêm Sản Phẩm
+              </button>
+              <!-- END BUTTON THÊM MỚI -->
+            </div>
+            <div class="col-md-4">
+              <!-- BEGIN TÌM KIẾM -->
+              <div class="input-group mb-3">
+                
+                <input
+                
+                  id="txtSearch"
+                  type="text"
+                  class="form-control"
+                  placeholder="Nhập từ khóa"
+                  aria-label="Recipient's username"
+                  aria-describedby="basic-addon2"
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text" id="basic-addon2"
+                    ><i class="fa fa-search"></i
+                  ></span>
+                </div>
+              </div>
+              <!-- END TÌM KIẾM -->
+            </div>
+          </div>
+          <div class="clear-fix"></div>
+          <div class="tblSanPham" id="tblSanPham">
+            <!-- BEGIN TABLE SẢN PHẨM -->
+            <table class="table table-bordered">
+              <thead>
+                <th>STT</th>
+                <th>Tên Sản Phẩm</th>
+                <th>Giá</th>
+                <th>Màn Hình</th>
+                <th>Camera trước</th>
+                <th>Camera Sau</th>
+                <th>Hình ảnh</th>
+                <th>Mô Tả</th>
+                <th>Loại Sản Phẩm</th>
+                <th>Action</th>
+              </thead>
+              <tbody id="tblDanhSachSP"></tbody>
+            </table>
+            <!-- END TABLE SẢN PHẨM -->
+          </div>
+          <br />
+        </div>
+        <!-- Kết thúc danh sách sản phẩm -->
+      </div>
+
+      <!--KetThuc Tabmenu-->
+
+      <!-- The Modal -->
+      <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">List sản phẩm</h4>
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+              <div class="form-group">
+                <label>Tên Sản Phẩm</label>
+                <input
+                  id="TenSP"
+                  class="form-control form-controlad"
+                  placeholder="Nhập vào tên sản phẩm"
+                />
+              </div>
+              <div class="form-group">
+                <label>Giá</label>
+                <input
+                  id="GiaSP"
+                  class="form-control form-controlad"
+                  placeholder="Nhập vào giá"
+                />
+              </div>
+              <div class="form-group">
+                <label>Màn hình</label>
+                <input
+                  id="ManhinhSP"
+                  class="form-control form-controlad"
+                  placeholder="Nhập kích thước"
+                />
+              </div>
+              <div class="form-group">
+                <label>Camera Sau</label>
+                <input
+                  id="CameraSau"
+                  class="form-control form-controlad"
+                  placeholder="Nhập thông tin"
+                />
+              </div>
+              <div class="form-group">
+                <label>Camera Trước</label>
+                <input
+                  id="CameraTruoc"
+                  class="form-control form-controlad"
+                  placeholder="Nhập thông tin"
+                />
+              </div>
+
+              <div class="form-group">
+                <label>Hình Ảnh</label>
+                <input
+                  id="HinhSP"
+                  class="form-control form-controlad"
+                  placeholder="Nhập vào địa chỉ hình ảnh sản phẩm"
+                />
+              </div>
+
+              <div class="form-group">
+                <label>Mô Tả</label>
+                <input
+                  id="GioithieuSP"
+                  class="form-control form-controlad"
+                  placeholder="Nhập vào thông tin sản phẩm"
+                />
+              </div>
+
+             
+
+
+              <div class="form-group ">
+                <label for="">Loại sản phẩm: </label>
+                <select class="form-control form-controlad" id="loaiSP">
+                  <option value="">Vui Lòng Chọn</option>
+                  <option value="Iphone">Iphone</option>
+                  <option value="Samsung">Samsung</option>
+               
+                </select>
+              </div>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container"></div>
+    <style>
+      #container {
+        min-width: 310px;
+        max-width: 800px;
+        height: 400px;
+        margin: 0 auto;
+      }
+    </style>
+
+<!-- Footer -->
+<footer class="bg-dark text-white footer-ad">
+  
+   <div class="d-flex justify-content-center pt-2">
+    <div class="text-right pr-2">
+      <p>Get connected with us on social networks:</p>
+    </div>
+    <div class="pl-2 text-left">
+     <a href=""> <i class="fa-brands fa-facebook-f  "></i></a>
+      <a href=""><i class="fa-brands fa-twitter  pl-2"></i></a>
+     <a href=""> <i class="fa-brands fa-google  pl-2"></i></a>
+     <a href=""> <i class="fa-brands fa-instagram  pl-2"></i></a>
+     <a href=""> <i class="fa-brands fa-invision  pl-2"></i></a>
+      <a href=""><i class="fa-brands fa-github pl-2"></i></a>
+    
+    </div>
+   </div>
+   <div class="container d-flex">
+<div class="col-3 ">
+  <h4><i class="fa-solid fa-robot"></i> CYBER PHONE</h4>
+  <p>We pride ourselves on our efficiency and hard work, but most of all our ability to source you the best quality and best value products and devices in the market.</p>
+</div>
+<div class="col-3">
+  <h4>BRANDS</h4>
+ <ul>
+  <li><a href="#">Iphone</a></li>
+  <li><a href="#">Samsung</a></li>
+
+ </ul>
+</div>
+<div class="col-3 ">
+  <h4>USEFUL LINKS</h4>
+  <ul>
+    <li><a href="">Pricing</a></li>
+    <li><a href="">Settings</a></li>
+    <li><a href="">Orders</a></li>
+    <li><a href="">Help</a></li>
+
+  </ul>
+</div>
+<div class="col-3 ">
+  <h4>CONTACT</h4>
+  <ul>
+    <li><i class="fa-solid fa-house"></i> TP - Ho Chi Minh, VN</li>
+    <li><i class="fa-solid fa-envelope"></i> phoneshop@mail.com</li>
+    <li><i class="fa-solid fa-phone"></i> + 01 234 567 88 </li>
+    <li><i class="fa-solid fa-mobile"></i>  + 01 234 567 89</li>
+  </ul>
+</div>
+
+   </div>
+      <div class="text-center">
+        <p>© 2022 Copyright: Phone Shop</p>
+      </div>
+    
+   
+</footer>
+
+
+
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script> -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="../models/Product.js"></script>
+    <script src="../services/productAPI.js"></script>
+    <script src="../controllers/main.js"></script>
+  </body>
+</html>
