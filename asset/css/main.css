@@ -111,7 +111,7 @@ body {
   font-weight: 600;
   color: #1d365e;
   text-align: center;
-  width: 50%;
+  width: 70%;
 }
 .cardPhone .cardPhone__text {
   font-size: 14px;
@@ -253,13 +253,13 @@ header #phoneNavbar .active .nav-link::after {
   transform: scaleX(1);
 }
 
-@media screen and (max-height: 991.98px) {
+@media screen and (max-width: 991.98px) {
   header #phoneNavbar .nav-link {
     text-align: center;
   }
 }
 .phoneCarousel {
-  background-image: url(/BC42_N03_PhoneShop/asset/img/product-header-bg.jpg);
+  background-image: url(/asset/img/product-header-bg.jpg);
   background-size: cover;
   background-position: center bottom;
   padding: 200px 0;
@@ -287,24 +287,33 @@ header #phoneNavbar .active .nav-link::after {
   width: 420px;
 }
 
-@media screen and (max-height: 991.98px) {
+@media screen and (max-width: 991.98px) {
   .phoneCarousel {
     padding: 150px 0;
   }
 }
-@media screen and (max-height: 767.98px) {
+@media screen and (max-width: 767.98px) {
   .phoneCarousel h1 {
     font-size: 48px;
   }
 }
-@media screen and (max-height: 575.98px) {
+@media screen and (max-width: 575.98px) {
   .phoneCarousel {
-    padding: 100px;
+    padding: 100px 0;
   }
 }
-@media screen and (max-height: 575.98px) {
+@media screen and (max-width: 575.98px) {
   .products {
     width: 90%;
+  }
+  .form-group label {
+    font-size: 20px;
+    font-weight: 600;
+    color: #353536;
+  }
+  .form-group .form-control {
+    width: 30%;
+    margin-bottom: 25px;
   }
 }
 /* CART */
