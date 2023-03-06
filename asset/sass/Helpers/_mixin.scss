@@ -19,14 +19,12 @@
 }
 
 @mixin responsive($screen) {
-    @if(map-has-key($map: $breakpoints, $key: $screen)) {
-        $value: map-get($map: $breakpoints, $key: $screen);
-
-        @media screen and (max-height:$value) {
+    @if(map-has-key($map:$breakpoints , $key:$screen)){
+        $value: map-get($map:$breakpoints , $key:$screen);
+        @media screen and (max-width:$value) {
             @content;
         }
     }
-
     @else {
         @warn "màn hình chưa khai báo!!";
     }

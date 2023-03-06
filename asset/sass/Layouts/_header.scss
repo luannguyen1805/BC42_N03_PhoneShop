@@ -72,10 +72,10 @@ header {
 @include responsive("large-down") {
     header {
         #phoneNavbar {
-            .nav-link {
-                text-align: center;
+                .nav-link {
+                    text-align: center;
 
-            }
+                }
         }
     }
 }

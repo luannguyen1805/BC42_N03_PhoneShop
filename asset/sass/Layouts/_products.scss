@@ -2,4 +2,14 @@
     .products {
         width: 90%;
     }
+    .form-group {
+        label {
+            @include styleText($fs-7, $fw-2, $color-dark-3);
+        }
+    
+        & .form-control {
+            width: 30%;
+            margin-bottom: $mg-1;
+        }
+    }
 }

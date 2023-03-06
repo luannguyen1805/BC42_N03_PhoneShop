@@ -1,5 +1,5 @@
 .phoneCarousel {
-    background-image: url(/BC42_N03_PhoneShop/asset/img/product-header-bg.jpg);
+    background-image: url(/asset/img/product-header-bg.jpg);
     background-size: cover;
     background-position: center bottom;
     padding: $pd-8 0;
@@ -43,6 +43,6 @@
 
 @include responsive("small-down") {
     .phoneCarousel {
-        padding: $pd-6;
+        padding: $pd-6 0;
     }
 }

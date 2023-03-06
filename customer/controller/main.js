@@ -135,7 +135,6 @@ getElement("selectList").onchange = async () => {
         filterData = data;
     } else {
         filterData = data.filter((product) => product.type == selectValue);
-        console.log(filterData);
     }
     renderProducts(filterData);
 };
